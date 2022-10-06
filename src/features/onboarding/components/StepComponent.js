@@ -4,14 +4,14 @@ import { connect } from "react-redux";
 
 function StepComponent(props) {
     return (
-        <div className="mx-auto mb-12 max-w-sm">
-            <div className="flex pb-3">
+        <div className="flex justify-evenly w-full">
+            <div className="flex w-1/2 md:w-2/5 lg:w-1/4 justify-center py-5">
                 {Array.from(Array(NUMBEROFONBOARDINGSTEP).keys()).map((step) => {
                     return (
                         <>
-                            <div className="flex-1">
-                                <div className="w-10 h-10 mx-auto rounded-full text-lg flex items-center" style={{backgroundColor: step < props.screenNumber ? "#664de5":"white", border : step < props.screenNumber ? 0 : "1px solid gray" }}>
-                                    <span className="text-center w-full" style={{color: step < props.screenNumber ? 'white' : 'black'}}>
+                            <div className="flex">
+                                <div className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-full flex items-center" style={{backgroundColor: step < props.screenNumber ? "#664de5":"white", border : step < props.screenNumber ? 0 : "1px solid gray" }}>
+                                    <span className="text-center text-sm md:text-base lg:text-lg  w-full" style={{color: step < props.screenNumber ? 'white' : 'black'}}>
                                         {step + 1}
                                     </span>
                                 </div>
@@ -21,7 +21,7 @@ function StepComponent(props) {
                                 <div className="w-1/6 align-center items-center align-middle content-center flex">
                                     <div className="w-1/6 bg-[grey] rounded items-center align-middle align-center flex-1 ">
                                         <div
-                                            className="text-xs leading-none py-1 text-center text-[grey] rounded "
+                                            className="text-xs leading-none py-[1px] text-center text-[grey] rounded "
                                             style={{ backgroundColor: step < props.screenNumber ? "#664de5":"#F8F8F8", }}
                                         ></div>
                                     </div>

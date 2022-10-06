@@ -7,17 +7,16 @@ import StepComponent from './components/StepComponent'
 import {connect} from 'react-redux'
 import CardComponent from './components/CardComponent';
 import { NUMBEROFONBOARDINGSTEP } from '../../data/constants';
+
 function OnboardingFeature(props) {
 
   return (
     <>
-      <div className='h-3/4 max-w-3/5'>
+      <div className='flex-1'>
         <HeaderComponent />
         <StepComponent  />
         <Heading />
-        <div style={{height: props.screenNumber === 4 ? "10%" : "35%"}}>
        { props.screenNumber < NUMBEROFONBOARDINGSTEP ? props.screenNumber === 3 ? <CardComponent/> : <InputComponent /> : null }
-       </div>
         <ButtonComponent />
       </div>
     </>
