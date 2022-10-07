@@ -2,7 +2,7 @@ import React from 'react'
 
 function CardComponent() {
     const [selected, setSelected] = React.useState(1);
-    console.log(selected)
+
     return (
             <div className='inline-flex justify-between item-ccenter pb-3  w-3/5 md:w-2/5 lg:w-3/12'>
                 <div className="flex flex-col items-start text-left p-5 justify-evenly cursor-pointer" onClick={() => { setSelected(1) }} style={{ border: selected === 1 ? '1px solid #664de5' : '1px solid grey', borderRadius: '5px' }}>

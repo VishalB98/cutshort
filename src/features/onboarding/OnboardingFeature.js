@@ -1,32 +1,35 @@
-import React from 'react'
-import ButtonComponent from './components/ButtonComponent';
-import HeaderComponent from './components/HeaderComponent'
-import Heading from './components/Heading';
-import InputComponent from './components/InputComponent';
-import StepComponent from './components/StepComponent'
-import {connect} from 'react-redux'
-import CardComponent from './components/CardComponent';
+import React, { Suspense } from 'react'
 import { NUMBEROFONBOARDINGSTEP } from '../../data/constants';
+import { connect } from 'react-redux'
+
+const HeaderComponent = React.lazy(() => import('./components/HeaderComponent'));
+const StepComponent = React.lazy(() => import('./components/StepComponent'));
+const Heading = React.lazy(() => import('./components/Heading'));
+const InputComponent = React.lazy(() => import('./components/InputComponent'));
+const CardComponent = React.lazy(() => import('./components/CardComponent'));
+const ButtonComponent = React.lazy(() => import('./components/ButtonComponent'));
+
 
 function OnboardingFeature(props) {
 
   return (
-    <>
-      <div className='flex-1'>
+
+    <div className='flex-1'>
+      <Suspense fallback={<div>Loading...</div>}>
         <HeaderComponent />
-        <StepComponent  />
+        <StepComponent />
         <Heading />
-       { props.screenNumber < NUMBEROFONBOARDINGSTEP ? props.screenNumber === 3 ? <CardComponent/> : <InputComponent /> : null }
+        {props.screenNumber < NUMBEROFONBOARDINGSTEP ? props.screenNumber === 3 ? <CardComponent /> : <InputComponent /> : null}
         <ButtonComponent />
-      </div>
-    </>
+      </Suspense>
+    </div>
 
   )
 }
 
-const  mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
   return {
-      screenNumber: state.OnboardingReducer.screenNumber
+    screenNumber: state.OnboardingReducer.screenNumber
   }
 }
 

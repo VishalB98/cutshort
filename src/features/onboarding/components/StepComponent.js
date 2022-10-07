@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 function StepComponent(props) {
     return (
         <div className="flex justify-evenly w-full">
-            <div className="flex w-1/2 md:w-2/5 lg:w-1/4 justify-center py-5">
+            <div className="flex w-1/2 md:w-2/5 lg:w-1/4 justify-center py-8">
                 {Array.from(Array(NUMBEROFONBOARDINGSTEP).keys()).map((step) => {
                     return (
                         <>
