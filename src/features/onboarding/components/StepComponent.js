@@ -19,11 +19,12 @@ function StepComponent(props) {
                             {
                                 step !== NUMBEROFONBOARDINGSTEP - 1 &&
                                 <div className="w-1/6 align-center items-center align-middle content-center flex">
-                                    <div className="w-1/6 bg-[grey] rounded items-center align-middle align-center flex-1 ">
+                                    <div className="w-1/6 bg-[#F8F8F8] rounded items-center align-middle align-center flex-1 ">
                                         <div
-                                            className="text-xs leading-none py-[1px] text-center text-[grey] rounded "
-                                            style={{ backgroundColor: step < props.screenNumber ? "#664de5":"#F8F8F8", }}
-                                        ></div>
+                                            className="py-[0.5px] rounded "
+                                            style={{ backgroundColor: step < props.screenNumber ? "#664de5":"#F8F8F8", width: step + 1 ===  props.screenNumber  ? "50%" : "100%"}}
+                                        >
+                                        </div>
                                     </div>
                                 </div>
 

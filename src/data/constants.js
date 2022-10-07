@@ -12,6 +12,6 @@ export const ONBOARDINGSTEPSDISPLAYTEXT = [{
     subHeading : "Well steamline your setup experience accordingly"
 },
 {
-    heading : "Congradulations! Eren!",
+    heading : "Congratulations! Eren!",
     subHeading : "You have completed onboarding, you can start using Eden!"
 }]

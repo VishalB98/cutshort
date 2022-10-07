@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 function InputComponent(props) {
     return (
-        <div className='flex justify-center items-center p-2' >
+        <div className='flex justify-center items-center p-2 pb-3' >
             <div className="w-3/5 md:w-2/5 lg:w-3/12">
                 {
                     props.screenNumber === 1 &&
